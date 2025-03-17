@@ -13,14 +13,20 @@ navTags.forEach((navTag) => {
   });
 });
 
-const lessonbuttons = document.querySelectorAll(".lesson-buttons");
-lessonbuttons.forEach((button) => {
-  button.addEventListener("mouseover", () => {
-    const icon = button.querySelector("i");
-    icon.style.color = "white";
-  });
-  button.addEventListener("mouseout", () => {
-    const icon = button.querySelector("i");
-    icon.style.color = "#422ad5";
-  });
-});
+
+
+// document.getElementById("lesson-buttons")
+//   .addEventListener("mouseover", (event) => {
+//     if (event.target.classList.contains("lesson-buttons")) {
+//       const icon = event.target.querySelector("i");
+//       if (icon) icon.style.color = "white";
+//     }
+//   });
+
+// document.getElementById("lesson-buttons")
+//   .addEventListener("mouseout", (event) => {
+//     if (event.target.classList.contains("lesson-buttons")) {
+//       const icon = event.target.querySelector("i");
+//       if (icon) icon.style.color = "#422ad5";
+//     }
+//   });
