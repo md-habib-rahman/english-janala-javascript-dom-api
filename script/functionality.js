@@ -11,7 +11,7 @@ const displayLessonButton = (lessons) => {
     const lessonbtn = document.createElement("div");
     lessonbtn.innerHTML = `
 	<button id="btn-${lesson.level_no}" onclick="displayLessons(${lesson.level_no})" class="btn btn-outline btn-primary 
-	lesson-buttons">
+	lesson-buttons"><i class="fa-solid fa-book-open"></i>
 	Lesson-${lesson.level_no}</button>`;
     dynamicLessonButtons.appendChild(lessonbtn);
   }
@@ -82,7 +82,9 @@ const loadSingleLesson = (cards) => {
         "rounded-lg",
         "flex",
         "flex-col",
-        "gap-8"
+        "gap-8",
+        "hover:bg-slate-200",
+        "transition"
       );
       //   console.log(element.id); onclick="showModal(${element.id})
       const noLesson = document.getElementById("no-lesson-selected");
@@ -150,12 +152,16 @@ function checkLogin() {
       document.getElementById("nav-bar").classList.remove("hidden");
       document.getElementById("faq").classList.remove("hidden");
       document.getElementById("voc-main").classList.remove("hidden");
+      document.getElementById("name").value = "";
+      document.getElementById("password").value = "";
     } else {
       Swal.fire({
         icon: "error",
         title: "Login Failed",
         text: "Password is not correct",
       });
+      document.getElementById("name").value = "";
+      document.getElementById("password").value = "";
     }
   } else {
     Swal.fire({
@@ -163,6 +169,8 @@ function checkLogin() {
       title: "Login Failed",
       text: "Please Enter User & Password",
     });
+    document.getElementById("name").value = "";
+    document.getElementById("password").value = "";
   }
 }
 
